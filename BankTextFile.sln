@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BankTextFile", "BankTextFile\BankTextFile.vcxproj", "{3CCB6AC8-0364-4383-B565-9CCD900C3331}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Debug|x64.ActiveCfg = Debug|x64
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Debug|x64.Build.0 = Debug|x64
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Debug|x86.ActiveCfg = Debug|Win32
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Debug|x86.Build.0 = Debug|Win32
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Release|x64.ActiveCfg = Release|x64
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Release|x64.Build.0 = Release|x64
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Release|x86.ActiveCfg = Release|Win32
+		{3CCB6AC8-0364-4383-B565-9CCD900C3331}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72E9B30B-EA49-483B-9021-8F37A61C23A7}
+	EndGlobalSection
+EndGlobal
