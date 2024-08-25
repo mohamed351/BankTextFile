@@ -79,10 +79,10 @@ struct Client * ReadTextFileAndGetClient(char * clientId) {
 }
 
 struct Client*  SplitLine(char * line) {
-	struct Client* client = malloc(sizeof(struct Client));
+	struct Client* client = (struct Client *) malloc(sizeof(struct Client));
 	int index = 0;
 
-	char balance[9];
+	char balance[9] = { "\0" };
 
 	char de[] = ",";
 
@@ -139,10 +139,14 @@ void ExitTransaction(struct Client* client) {
 }
 
 void Save(struct Client* client) {
-	struct  Client* clients[100] = { NULL };
+	struct  Client* clients[20] = { NULL };
 	char line[200];
 	int index = 0;
 	FILE* file = fopen(CLIENT_FILE_NAME, "r");
+	if (file == NULL) {
+		printf("Couldn't make transaction right now please try again");
+		return;
+	}
 	while (fgets(line, sizeof(line), file))
 	{
 		clients[index] = SplitLine(line);
@@ -150,6 +154,7 @@ void Save(struct Client* client) {
 
 			clients[index] = client;
 		}
+		
 
 		index++;
 	}
@@ -158,8 +163,8 @@ void Save(struct Client* client) {
 
 
 	FILE* filewrite = fopen(CLIENT_FILE_NAME, "w");
-	char* contactedString = malloc(sizeof(100));
-	for (int i = 0; i < 100; i++)
+	char* contactedString = (char *) malloc(sizeof(100));
+	for (int i = 0; i < 20; i++)
 	{
 		
 		if (clients[i] != NULL) {
@@ -184,7 +189,16 @@ void Save(struct Client* client) {
 	//free(contactedString);
 	/*free(contactedString);
 	free(clients);*/
+
+	
 	fclose(filewrite);
+	contactedString = NULL;
+	free(contactedString);
+	for (int i = 0;i < 20;i++) {
+		clients[i] = NULL;
+	 free(clients[i]);
+	}
+
 
 	
 
